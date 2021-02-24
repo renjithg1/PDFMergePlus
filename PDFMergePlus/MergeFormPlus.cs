@@ -17,8 +17,6 @@ namespace PDFMergePlus
 {
     public partial class PDFMergeFrmPlus : Form
     {
-        //private Array pdfListArray;
-        //private int index;
         private OpenFileDialog pdfOpenFileDlg;
         private FolderBrowserDialog pdfOutputFolderDlg;
         Point pos;

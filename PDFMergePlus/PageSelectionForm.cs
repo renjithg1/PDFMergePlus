@@ -12,7 +12,6 @@ namespace PDFMergePlus
 {
     public partial class PageSelectionForm : Form
     {
-
         public string Range { get; set; }
         bool cancel_event = false;
         public PageSelectionForm()
@@ -57,8 +56,6 @@ namespace PDFMergePlus
 
         }
 
-
-
         private bool ValidatePageRange()
         {
             string str_pagerange = txt_pagerange.Text;
@@ -67,7 +64,7 @@ namespace PDFMergePlus
 
 
             return true; 
-
+            /* TODO 
             Regex regex = new Regex(@"^[1-9]*$");
             Match match = regex.Match(str_pagerange);
             if (!match.Success)
@@ -75,8 +72,8 @@ namespace PDFMergePlus
                 throw new Exception("You must enter a valid page range");
             }
 
-
             return true;
+            */
         }
 
         private void PageSelectionDlg_FormClosing(object sender, FormClosingEventArgs e)
