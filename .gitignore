@@ -2,6 +2,7 @@
 PDFMergePlus/bin/
 PDFMergePlus/obj/
 packages/
+.vs/
 
 # Prerequisites
 *.d

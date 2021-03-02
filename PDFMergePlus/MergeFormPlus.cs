@@ -50,7 +50,6 @@ namespace PDFMergePlus
             CreateMenu();
         }
 
-
         /*
             Initilization of all menus associated with this application. 
          *  Right now I have only "remove item:
@@ -87,8 +86,6 @@ namespace PDFMergePlus
             menuItem4.Click += new EventHandler(this.InvertSelection_Click);
             menuItem5.Click += new EventHandler(this.Merge_Menu_Click);
             menuItem6.Click += new EventHandler(SelectPagesMenuItem_Click);
-            // pdfList.ContextMenu = cm;
-
 
             IntPtr hSysMenu = GetSystemMenu(this.Handle, false);
 
@@ -131,7 +128,6 @@ namespace PDFMergePlus
 
             // Set the SelectionMode to select multiple items.
             //pdfList.SelectionMode = SelectionMode.MultiExtended;
-
 
             btnMerge.Enabled = false;
             btnmergeSelected.Enabled = false;
@@ -191,7 +187,6 @@ namespace PDFMergePlus
             }
         }
 
-
         private void MergeBtn(object sender, EventArgs e)
         {
             Merge(sender, e);
@@ -206,8 +201,6 @@ namespace PDFMergePlus
             // Key value pair <Pdfpath, Pages>
             List<KeyValuePair<string, string>> pdfListToMergeWithPages = new List<KeyValuePair<string, string>>();
 
-
-            //Renjith ListView
             if (bSelected)
             {
                 if (pdf_listView.SelectedItems.Count <= 1)
@@ -263,7 +256,6 @@ namespace PDFMergePlus
                 System.IO.File.Copy(outputPdfPath, outputBackupPdfPath);
 
                 pdfListToMergeWithPages.Add(new KeyValuePair<string, string>(outputBackupPdfPath, "All"));
-
             }
 
             if (pdfListToMergeWithPages.Count == 1 && !bOverWriteOutput)
@@ -310,9 +302,7 @@ namespace PDFMergePlus
                             neededPage.Add(int.Parse(tokenValue));
                         }
                     }
-                }
-
-
+                }// end of IF
 
                 PdfReader sourceReader = new PdfReader(sourcePDFPath);
                 PdfDocument sourcePDFDoc = new PdfDocument(sourceReader);
@@ -337,16 +327,13 @@ namespace PDFMergePlus
                         if (neededPage.Exists(x => x == pageNum))
                         {
                             neededPage.Remove(pageNum);
-
                             // Add page with original size
                             destination_pdf.AddPage(sourcePage.CopyTo(destination_pdf));
                         }
                     }
-                }
-
+                } // end of inner for
                 sourcePDFDoc.Close();
-
-            }
+            }// Emd of outer for
 
             destination_pdf.Close();
 
@@ -396,8 +383,6 @@ namespace PDFMergePlus
             btnMerge.Enabled = false;
             btnmergeSelected.Enabled = false;
         }
-
-
 
         private void Remove_Click(object sender, EventArgs e)
         {

@@ -44,14 +44,13 @@ namespace PDFMergePlus
         {
             get
             {
-                return "4.1";
-                //return Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                return Assembly.GetExecutingAssembly().GetName().Version.ToString();
             }
         }
 
         public string AssemblyDescription
         {
-           /* get
+           get
             {
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false);
                 if (attributes.Length == 0)
@@ -59,10 +58,6 @@ namespace PDFMergePlus
                     return "";
                 }
                 return ((AssemblyDescriptionAttribute)attributes[0]).Description;
-            }*/
-            get
-            {
-                return "Merges multipe PDF files to a single file.";
             }
         }
 
@@ -88,18 +83,13 @@ namespace PDFMergePlus
                 {
                     return "";
                 }
-                return "Free to copy and for personnel use.";
-                //return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
+                return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
             }
-           /* get
-            {
-                return "Free to copy";
-            }*/
         }
 
         public string AssemblyCompany
         {
-            /*get
+            get
             {
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
                 if (attributes.Length == 0)
@@ -107,10 +97,6 @@ namespace PDFMergePlus
                     return "";
                 }
                 return ((AssemblyCompanyAttribute)attributes[0]).Company;
-            }*/
-            get
-            {
-                return "renjith";
             }
         }
         #endregion
